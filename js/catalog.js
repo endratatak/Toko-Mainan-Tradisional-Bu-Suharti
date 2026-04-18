@@ -24,9 +24,7 @@ function displayProducts(productList) {
 
     noResults.classList.add('d-none');
     productCount.textContent = `Menampilkan ${productList.length} produk`;
-    productList.forEach(product => {
-        productGrid.innerHTML += createProductCard(product);
-    });
+    productGrid.innerHTML = productList.map(createProductCard).join('');
 }
 
 function createProductCard(product) {
@@ -42,23 +40,23 @@ function createProductCard(product) {
         <div class="col-md-6 col-lg-4 col-xl-3">
             <div class="card product-card h-100 shadow-sm">
                 <div class="product-image-wrapper" style="cursor:pointer;" onclick="openProductModal(${product.id})">
-                    <img src="${product.image}" class="card-img-top product-image" alt="${product.name}"
+                    <img src="${escapeHTML(product.image)}" class="card-img-top product-image" alt="${escapeHTML(product.name)}"
                          onerror="this.src='images/products/placeholder.jpg'">
                     <div class="product-badge">${stockBadge}</div>
                 </div>
                 <div class="card-body d-flex flex-column">
                     <div class="mb-2">
-                        <span class="badge bg-light text-dark border">${getCategoryName(product.category)}</span>
+                        <span class="badge bg-light text-dark border">${escapeHTML(getCategoryName(product.category))}</span>
                     </div>
-                    <h5 class="card-title">${product.name}</h5>
-                    <p class="card-text text-muted small flex-grow-1">${truncateText(product.description, 80)}</p>
+                    <h5 class="card-title">${escapeHTML(product.name)}</h5>
+                    <p class="card-text text-muted small flex-grow-1">${escapeHTML(truncateText(product.description, 80))}</p>
                     <div class="product-meta mb-3">
                         <small class="text-muted">
-                            <i class="fas fa-map-marker-alt"></i> ${product.origin}
+                            <i class="fas fa-map-marker-alt"></i> ${escapeHTML(product.origin)}
                         </small>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="text-primary mb-0">${formatCurrency(product.price)}</h4>
+                        <h4 class="text-primary mb-0">${escapeHTML(formatCurrency(product.price))}</h4>
                         <button class="btn btn-outline-primary btn-sm" onclick="openProductModal(${product.id})">
                             <i class="fas fa-eye"></i> Detail
                         </button>

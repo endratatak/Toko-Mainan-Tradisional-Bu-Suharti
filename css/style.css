@@ -414,3 +414,33 @@ footer {
         display: none !important;
     }
 }
+
+/* ── Toast Container ── */
+.toast-container-fixed {
+    z-index: 9999;
+}
+
+/* ── About: Values Icon Circle ── */
+.value-icon-circle {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Contact: Review Card ── */
+.review-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.review-stars {
+    font-size: 11px;
+}
+
+.review-text {
+    font-size: 12px;
+}

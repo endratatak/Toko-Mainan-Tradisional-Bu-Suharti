@@ -19,9 +19,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="ms-auto d-flex align-items-center gap-3">
                 <!-- Keranjang di kiri Katalog -->
-                <button class="btn btn-outline-success position-relative" onclick="openCart()" title="Keranjang Belanja">
+                <button class="btn btn-outline-success position-relative" onclick="openCart()" title="Keranjang Belanja" aria-label="Buka keranjang belanja">
                     <i class="fas fa-shopping-cart"></i>
-                    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+                    <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none" aria-live="polite">0</span>
                 </button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
@@ -41,11 +41,11 @@
 </nav>
 
 <!-- ── MODAL DETAIL PRODUK ────────────────────── -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="productModal" tabindex="-1" aria-label="Detail Produk" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content border-0">
             <div class="modal-header border-0 pb-0">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body pt-0" id="productModalBody">
                 <!-- Diisi oleh openProductModal() di main.js -->
@@ -55,14 +55,14 @@
 </div>
 
 <!-- ── MODAL KERANJANG BELANJA ────────────────── -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content border-0">
             <div class="modal-header">
-                <h5 class="modal-title fw-bold">
+                <h5 class="modal-title fw-bold" id="cartModalLabel">
                     <i class="fas fa-shopping-cart me-2 text-success"></i> Keranjang Belanja
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
             </div>
             <div class="modal-body" id="cartModalBody">
                 <!-- Diisi oleh renderCart() di main.js -->
@@ -97,9 +97,9 @@
             <div class="col-md-4 mb-3">
                 <h6 class="fw-bold mb-3">Ikuti Kami</h6>
                 <div class="social-links">
-                    <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-2x"></i></a>
-                    <a href="#" class="text-white me-3"><i class="fab fa-facebook fa-2x"></i></a>
-                    <a href="https://wa.me/628122940513" class="text-white"><i class="fab fa-whatsapp fa-2x"></i></a>
+                    <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://wa.me/628122940513" class="text-white" aria-label="Hubungi via WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
                 </div>
             </div>
 
