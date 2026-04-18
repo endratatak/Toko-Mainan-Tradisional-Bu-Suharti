@@ -1,1 +1,424 @@
-<!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script>(function(){window._cf_chl_opt = {cvId: '3',cZone: 'claude.ai',cType: 'managed',cRay: '9ee53f3ebf1f1bd5',cH: 'B6oM235wvJ6QPBX_Omlzk401D..mLjd1W0ds3JYcOBs-1776531850-1.2.1.1-CkeUAfIpzncmd7PtlvwJ8quCeedrWCjAmvDGzVWG8KaftM.dckl4kMsNqSF4JQDS',cUPMDTk:"\/code\/session_01KhSJQjXTZg6keKJjgvbKNn\/file?path=\/home\/user\/Toko-Mainan-Tradisional-Bu-Suharti\/js\/main.js&__cf_chl_tk=f7qzUtOgD5uG29HS.T_2.FtBw0JoGRY2Ja_.D5RR.PE-1776531850-1.0.1.1-BsCXdNRYKVKhF2ZRPXvU1mu9tQeahB61r_9zlMV3jis",cFPWv: 'g',cITimeS: '1776531850',cTplC:0,cTplO:0,cTplV:5,cTplB: '0',fa:"\/code\/session_01KhSJQjXTZg6keKJjgvbKNn\/file?path=\/home\/user\/Toko-Mainan-Tradisional-Bu-Suharti\/js\/main.js&__cf_chl_f_tk=f7qzUtOgD5uG29HS.T_2.FtBw0JoGRY2Ja_.D5RR.PE-1776531850-1.0.1.1-BsCXdNRYKVKhF2ZRPXvU1mu9tQeahB61r_9zlMV3jis",md: '8YBVyHLC.OfN7aKvEln3JU747_hhdOdUQ7t70X2xR0c-1776531850-1.2.1.1-ioV.oz6FYCnLlaXc26UQe0JcxMvG31L6GrZ8r9nj3tkAw7ZosXhxoJ8YLhMV5AwqKZJpOqERqznW7czT0ZHZejJectlbiJydU1NP9vNYe8uN3TZXho8vvUvvcFK6Jyq5GT0Zf0fghek5dmjSDulOouUEOm0.vcWqy9rLUtm9WZASW2pFE5vSdNZEk64_nq_KATN9VvL6kljBj7qpRfb32AYxk3vFxpdMZ7AQ6VjH94Qpct1MCXXLsurqBlpsVpq0nOUOvGY5pt8Sm99REx21ukhmUk0nP.MXoqosFQxT5LIMebh8RCub7j.0uqaNGURLD8ZZxZUND2evTvNkB9oFUPkjGKmZ8NmNP0DQiywoejGJlQP5DFT8GZ7vccwNOx1884Yr4RBgyfG.nnjG9PPaeRAqbxTntOYkUkQbRtp9O9GvacI1zrMeaMke2dz48DVKPT8bPN8Io.NXcZvR63MtYsMYi.UETC9OZxQSwBP1VCq3L9SrNUU5Dwn8sOSsYAR5kpGWk2ST22KH0b9iIcHiWIriWOYVnrNLWcaCQq6jnG7uKCm1lrW4EB1F.z_u9REtfMh4XF2xY.KoqnD7Aeu_yoLug2peBN6Rd5Q9HEE0eUnYRAKOwMPezjGONG91fMp5ytOC8v.vd.XCk53DMBJxf2ZIEOwFmdRVjVSbKX78xmKeDBIDKw5S_HSjBswd2YQ1gpw1_9JI9jbagoPKTNtLyLJPz1oH_dfak6IeN4NX4eDtkN09G9Pzt0G1Gv7sUrJMmm8Gw2wgfng6V3qhxTwHzrFEgRkAVGYEPB06QvdygVnmD6gax5PHEpPgy1.sSvBpVTI4OT95TeHkzQQH.HB8b_fMw9KFZ7iFRVgvDVBR.skZGPgabzNWVHZGHfwcXPYRBUKoKlAOUleufSm2sTa4dljFQiXhVpZ4VAv4boiKg_sF3cK.FPZEurAssh_tXu2cHh5neI4wI7TWrbhaFKtT0Z9tQaRQTMUXus_0wFqZmlZn_ny6LrNyEjIf_bWWWdHaZgHShEto7s6eGotr7xcxiDsdN5EULuXtpq93Nx88wrPZ.Lb9XYO_T0vOlAQ6EgsbeYEueRMTgphYhId5mHw9nK0a3xUFuX2rziiFoYZl0xk',mdrd: '4bcWJVxbmr0nNrjPztZLGkGqWjAgELGIYBhDzwP4ZxM-1776531850-1.2.1.1-CAX24DAU8P6XJplQxOEIkY.QW9.142sM7rBbfFoixccPOYjvYasrUj77bTH1k9sG6dIqIiQuVMicwxlXgHmOxVANZwNc6k72WP9s5x98P5HiCLYHNjNcaMCYuYyaVKmSuKKqVozrDrBvFST0J_Ak0rGpk5EoIzBWkGJjcBQH13ShNXzKmDGMyNoqr7xwdcO3eZuiIjlLB2PLC8B7f_R0VjbbSOY1TeofgO__3AE43LaXX3SOx8RiqfwnnOvVal5yFiyleAC7Gr5Fd56SgLRApNfU_eTH9Vw4DrYMVv9GSjG.gYZuQMnwvOAF0AA6TKA_eyFPnJEHH5RnCjMeJylc5ri62GrIA9tPzuQsldfOCuqT.7eiOAd2NNYYnfzR.t.qmWGhlHvUmLHDm.7z1WiIBuc7xoy1gSJkmzcFmAj6R9M1r6_9xeqFNseIUisjo7lpqByyNzUZlYDjx.Le7sAUFjBgidy_kzCRJnD5x4qHXuuUDI_SI9BrDzlh6larBdbtoXPEFyDwi7khjn0mKOkWG3h6TVXNON.NhduoSwZTySZr1hwDlPTbqmjNQ9dxLcq7M.5PdRX_QUKeJsJ9YXlGdDyLuWfu0VekfSd2FZ7oadGuDxDd3c5P8kOP9ZavgtYX4proF1Cqpi2g8xrHPHis09xTitMaDGcN0cFNWcVOqJonCkwcQO6zLWvDQLM8Ui5v5fKdYw4XWvuxmRW9k8ltkNzV6LWuihy3I6y6Oq0TAJAZ8hOOiNPnxXZGpEk19IhIzBV61Qivm3cbECGQCasuhfJi1qAtRIgDKZeH7bXrTTG3WS.wB1wzsQwAmKyf8utn3rRC2e4dHYes6dPdimIbzmvOr5ntZD5WcyFuODo8prkx_s6Dkem2UnvJHtfITdxsa9wEhSn9aKVMU4B6bUlXoFaAQz9vZkxC9B9LlfCWhiNKRZyL7tItV9uHra1mPp19urWxflN7kFExqkgARZLDP6Xww2F.cfGVFH0ubIIPL6n3Qbeuq0DukwBmRGwk6ADK1E8A1uLYEZAHyuPBWLttG4DePcUMwQu6CGX3DJ.qB67wp9tHhtMpnWWG5lhtLyuCiOB2mgYflLp5YbMKyXyqM06D.qq2E_syQPaIJm_7UzqpPsoP64_Kci.PXfnwfPNfHguzkat2FF.X054U9lIEZJtA_1P1MeaurRicu05C0kdH0bdue_BbO7HK_1a.jIU5MS1yzZsboIgEJ8Ug7_LQb9YZOdGbCwJAW33q0A1fVz7PsgYqoZFOMG.dOSQzSBdigISGPS9QTK0w.5z_wp597BqA2eYMOEww0FKTK2i4pQerWQwt9vrKscd8bwSapF8xE3wrGBrocd9t6Q4EHz7W6cVhSorz9OqIgWKAJILiW99ee85u0qyhEychnx_hO6y5Lpb2yKihORvAV7JeHRlVds8IYR7pJASfuSP7fPlUzU44XnWB6wxrOMFLxHUraDZDDadSiZtwcS4.E1OagpyFIydGtmj3uT9LPv5Nx37cdM9yB_HX03nDwhx8u_QBKJszjR8um3i4AjuVgGbmRn_7.uAk2A1ff5dkKkuSEfp03El5DF3oqHUMIXpxHAlPgOpywN5MzCEccxz.iV2jahoO94m_NHggeuZMFXiRq9Fp_k2LLBsJu0m2Yb9xdM0VGgj74CvZjO.pc1WdhbsVTx_G9liZjNgakKBq8Nk1GLNoywOYEQVsVGdtLncoIyKNzUyUV1ahkvlwxc2lWpsOr.mN7Zk3GiZn8eBPeRWneox.YT7G4aod81XSxUZ3TWsNHL0fLCE.LzWH0YVgcjNgyqwVGyJIIF._AAWEK_jWdQK6DscieYa8A5EF7JR1..EjbIH81rSrvkmQ6NUXR0k4VkrlIMhbMhd8FCXjs2p1FWyAeTnC3h3co.JeehUaS26VvNwVyHUB4XkzHJ6eqHPZadbvPgjYwjLsa6dZzK6cuevYkV2gwVxE8VqakImONgAPdF3aALAMhycktK5s7O.fFT2mVascADVB826I57uHSIN_9risXZ99Up9i1rnO.XmHcBBo0U3dfGn33haliOpyu8DEwLfZcv_mh8khh648ifQPztvq4asu8JKaK__GE4hrtMSal030bYiaPZ475tQlsKBlK.kLjIXJFeZoIarKuDdPi0o87VJ31zj8dzCRQ_lHOsOSbhl3xCn5DOjzYhZ7F9WxSyt00nJhTxNqcYNSS2eFRCSa_WAmxzzNeeQysE6WdSZCNhXnBITO4Rfi_uEoDTlVIF8W0_1aYhKCdUMg4I2y.isurk3JhPwNXNzhX1JpaBGKEogjEgUWmYXq_0taTtRCpMvKEmGL8_qGzXMXmjQUeUZoXffcQlXU4xuAac2Yfp4b6djXaEOxfmsW6VbGOP4ticqfx5kOv1ypRGnVvZzPdBQPEbDVrOrT0zHGC0RLTvuMZ.u715swpZouqaPJdEy6vNESzNegu_C0A5H.7byhnUNy1IfwGeFnacqXj5WO6mpJwBLhiizd_4.Q_lQfSCa6t.LJhMm1t1A_.HvzCuLrAXk1j7k507dk2qhwF9vS48IiMqJo4rpHmnrvWrV95lZp2R4SgzKLxTIvM3KO7sTjd2egUXZJm0o2MPvgpgaJyEdm61FfdoWRZrio8Rpjb1ZYofPXSZuYoxIqAI4_JFh3RsE',};var a = document.createElement('script');a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=9ee53f3ebf1f1bd5';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"\/code\/session_01KhSJQjXTZg6keKJjgvbKNn\/file?path=\/home\/user\/Toko-Mainan-Tradisional-Bu-Suharti\/js\/main.js&__cf_chl_rt_tk=f7qzUtOgD5uG29HS.T_2.FtBw0JoGRY2Ja_.D5RR.PE-1776531850-1.0.1.1-BsCXdNRYKVKhF2ZRPXvU1mu9tQeahB61r_9zlMV3jis"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+// ================================================
+// main.js — Utility + Cart + Modal + Component Loader
+// ================================================
+
+// ── Format Helpers ──────────────────────────────
+function formatCurrency(amount) {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(amount);
+}
+
+function formatWeight(grams) {
+    return grams < 1000 ? `${grams} gram` : `${(grams / 1000).toFixed(1)} kg`;
+}
+
+function truncateText(text, maxLength) {
+    if (!text) return '';
+    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
+}
+
+function getCategoryName(category) {
+    const map = {
+        'tradisional': 'Mainan Tradisional',
+        'edukatif'   : 'Mainan Edukatif',
+        'kayu'       : 'Mainan Kayu',
+        'outdoor'    : 'Outdoor'
+    };
+    return map[category] || category;
+}
+
+// ── Navigation ───────────────────────────────────
+function viewProductDetail(productId) {
+    openProductModal(productId);
+}
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function () {
+    const btn = document.getElementById('scrollTopBtn');
+    if (btn) btn.classList.toggle('show', (window.scrollY || window.pageYOffset) > 300);
+});
+
+// ── WhatsApp ─────────────────────────────────────
+function orderViaWhatsApp(product) {
+    const msg = encodeURIComponent(
+        `Halo, saya tertarik dengan produk:\n\n` +
+        `Nama     : ${product.name}\n` +
+        `Harga    : ${formatCurrency(product.price)}\n` +
+        `Kategori : ${getCategoryName(product.category)}\n\n` +
+        `Apakah produk ini masih tersedia?`
+    );
+    window.open(`https://wa.me/628122940513?text=${msg}`, '_blank');
+}
+
+function shareProduct(product) {
+    if (navigator.share) {
+        navigator.share({ title: product.name, text: product.description, url: window.location.href });
+    } else {
+        navigator.clipboard.writeText(window.location.href)
+            .then(() => alert('Link produk telah disalin!'));
+    }
+}
+
+// ================================================
+// CART SYSTEM
+// ================================================
+let cart = [];
+
+function addToCart(productId) {
+    // products harus sudah di-load lewat products.js
+    const product = products.find(p => p.id === parseInt(productId));
+    if (!product) return;
+
+    if (product.stock === 0) {
+        alert('Maaf, produk ini sedang habis.');
+        return;
+    }
+
+    const existing = cart.find(item => item.id === product.id);
+    if (existing) {
+        existing.qty += 1;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+
+    updateCartBadge();
+    showToast(`${product.name} ditambahkan ke keranjang`, 'success');
+}
+
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== parseInt(productId));
+    updateCartBadge();
+    renderCart();
+}
+
+function updateQty(productId, delta) {
+    const item = cart.find(i => i.id === parseInt(productId));
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) removeFromCart(productId);
+    else {
+        updateCartBadge();
+        renderCart();
+    }
+}
+
+function updateCartBadge() {
+    const badge = document.getElementById('cartBadge');
+    if (!badge) return;
+    const total = cart.reduce((sum, i) => sum + i.qty, 0);
+    if (total > 0) {
+        badge.textContent = total;
+        badge.classList.remove('d-none');
+    } else {
+        badge.classList.add('d-none');
+    }
+}
+
+function getCartTotal() {
+    return cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+}
+
+function openCart() {
+    renderCart();
+    const modal = new bootstrap.Modal(document.getElementById('cartModal'));
+    modal.show();
+}
+
+function renderCart() {
+    const body   = document.getElementById('cartModalBody');
+    const footer = document.getElementById('cartModalFooter');
+    if (!body || !footer) return;
+
+    if (cart.length === 0) {
+        body.innerHTML = `
+            <div class="text-center py-5">
+                <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                <h5 class="text-muted">Keranjang masih kosong</h5>
+                <p class="text-muted small">Tambahkan produk dari katalog</p>
+                <button class="btn btn-primary mt-2" data-bs-dismiss="modal" onclick="window.location.href='index.html'">
+                    <i class="fas fa-store me-2"></i> Lihat Katalog
+                </button>
+            </div>`;
+        footer.innerHTML = '';
+        return;
+    }
+
+    // Render cart items
+    body.innerHTML = cart.map(item => `
+        <div class="d-flex align-items-center gap-3 py-3 border-bottom">
+            <img src="${item.image}" alt="${item.name}"
+                 style="width:70px;height:70px;object-fit:cover;border-radius:8px;"
+                 onerror="this.src='images/products/placeholder.jpg'">
+            <div class="flex-grow-1">
+                <h6 class="mb-1 fw-bold">${item.name}</h6>
+                <span class="badge bg-light text-dark border small">${getCategoryName(item.category)}</span>
+                <div class="text-primary fw-bold mt-1">${formatCurrency(item.price)}</div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQty(${item.id}, -1)">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <span class="fw-bold px-1">${item.qty}</span>
+                <button class="btn btn-outline-secondary btn-sm" onclick="updateQty(${item.id}, 1)">
+                    <i class="fas fa-plus"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm ms-1" onclick="removeFromCart(${item.id})">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    `).join('');
+
+    // Footer: total + checkout
+    const total = getCartTotal();
+    footer.innerHTML = `
+        <div class="d-flex justify-content-between align-items-center w-100 px-1">
+            <span class="fw-bold fs-5">Total:</span>
+            <span class="fw-bold fs-5 text-primary">${formatCurrency(total)}</span>
+        </div>
+        <button class="btn btn-success btn-lg w-100" onclick="checkoutViaWhatsApp()">
+            <i class="fab fa-whatsapp me-2"></i> Checkout via WhatsApp
+        </button>
+        <button class="btn btn-outline-danger btn-sm w-100" onclick="clearCart()">
+            <i class="fas fa-trash me-1"></i> Kosongkan Keranjang
+        </button>
+    `;
+}
+
+function clearCart() {
+    if (!confirm('Kosongkan semua keranjang?')) return;
+    cart = [];
+    updateCartBadge();
+    renderCart();
+}
+
+function checkoutViaWhatsApp() {
+    if (cart.length === 0) return;
+
+    const itemLines = cart.map(i =>
+        `• ${i.name} x${i.qty} = ${formatCurrency(i.price * i.qty)}`
+    ).join('\n');
+
+    const total = formatCurrency(getCartTotal());
+
+    const msg = encodeURIComponent(
+        `Halo, saya ingin memesan produk berikut:\n\n` +
+        `${itemLines}\n\n` +
+        `*Total: ${total}*\n\n` +
+        `Mohon konfirmasi ketersediaan dan info pengiriman. Terima kasih!`
+    );
+
+    window.open(`https://wa.me/628122940513?text=${msg}`, '_blank');
+}
+
+// ================================================
+// PRODUCT MODAL
+// ================================================
+function openProductModal(productId) {
+    const product = products.find(p => p.id === parseInt(productId));
+    if (!product) return;
+
+    const stockStatus = product.stock > 10
+        ? `<span class="badge bg-success"><i class="fas fa-check-circle me-1"></i>Stok Tersedia</span>`
+        : product.stock > 0
+            ? `<span class="badge bg-warning text-dark"><i class="fas fa-exclamation-circle me-1"></i>Stok Terbatas</span>`
+            : `<span class="badge bg-danger"><i class="fas fa-times-circle me-1"></i>Habis</span>`;
+
+    document.getElementById('productModalBody').innerHTML = `
+        <div class="row g-4">
+            <!-- Gambar -->
+            <div class="col-lg-5">
+                <img src="${product.image}" class="img-fluid rounded-3 shadow-sm w-100"
+                     style="max-height:380px;object-fit:cover;"
+                     alt="${product.name}"
+                     onerror="this.src='images/products/placeholder.jpg'">
+                <button class="btn btn-outline-secondary w-100 mt-3"
+                        onclick="shareProduct(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+                    <i class="fas fa-share-alt me-1"></i> Bagikan Produk
+                </button>
+            </div>
+            <!-- Info -->
+            <div class="col-lg-7">
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <span class="badge bg-primary">${getCategoryName(product.category)}</span>
+                    ${stockStatus}
+                </div>
+                <h3 class="fw-bold mb-2">${product.name}</h3>
+                <h4 class="text-primary fw-bold mb-3">${formatCurrency(product.price)}</h4>
+
+                <!-- Deskripsi -->
+                <p class="text-muted mb-3">${product.description}</p>
+
+                <!-- Spesifikasi -->
+                <div class="row g-2 mb-3">
+                    <div class="col-6">
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="fas fa-box text-primary"></i>
+                            <span><strong>Material:</strong> ${product.material}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="fas fa-child text-primary"></i>
+                            <span><strong>Usia:</strong> ${product.ageRange}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="fas fa-weight text-primary"></i>
+                            <span><strong>Berat:</strong> ${formatWeight(product.weight)}</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex align-items-center gap-2 small">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span><strong>Asal:</strong> ${product.origin}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fitur -->
+                <ul class="feature-list mb-4">
+                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                </ul>
+
+                <!-- Tombol Aksi -->
+                <div class="d-flex flex-column gap-2">
+                    <button class="btn btn-primary btn-lg"
+                            onclick="addToCart(${product.id})"
+                            ${product.stock === 0 ? 'disabled' : ''}>
+                        <i class="fas fa-shopping-cart me-2"></i> Tambah ke Keranjang
+                    </button>
+                    <button class="btn btn-success btn-lg"
+                            onclick="orderViaWhatsApp(${JSON.stringify(product).replace(/"/g, '&quot;')})"
+                            ${product.stock === 0 ? 'disabled' : ''}>
+                        <i class="fab fa-whatsapp me-2"></i> Pesan via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    new bootstrap.Modal(document.getElementById('productModal')).show();
+}
+
+// ================================================
+// TOAST NOTIFICATION
+// ================================================
+function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+
+    const id = 'toast-' + Date.now();
+    const bg = { success: 'bg-success', error: 'bg-danger', warning: 'bg-warning', info: 'bg-info' }[type] || 'bg-info';
+
+    container.insertAdjacentHTML('beforeend', `
+        <div id="${id}" class="toast align-items-center text-white ${bg} border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">${message}</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    `);
+
+    const el = document.getElementById(id);
+    const toast = new bootstrap.Toast(el, { delay: 2500 });
+    toast.show();
+    el.addEventListener('hidden.bs.toast', () => el.remove());
+}
+
+// ================================================
+// COMPONENT LOADER
+// ================================================
+function loadComponents() {
+    fetch('components.html')
+        .then(res => {
+            if (!res.ok) throw new Error('Gagal memuat components.html');
+            return res.text();
+        })
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Inject navbar
+            const navbar = doc.getElementById('main-navbar');
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            if (navbar && navbarPlaceholder) {
+                navbarPlaceholder.replaceWith(navbar);
+                setActiveNavLink();
+            }
+
+            // Inject modals (product + cart) — diletakkan di body
+            ['productModal', 'cartModal'].forEach(id => {
+                const modal = doc.getElementById(id);
+                if (modal && !document.getElementById(id)) {
+                    document.body.appendChild(modal);
+                }
+            });
+
+            // Inject footer
+            const footer = doc.getElementById('main-footer');
+            const footerPlaceholder = document.getElementById('footer-placeholder');
+            if (footer && footerPlaceholder) {
+                footerPlaceholder.replaceWith(footer);
+            }
+        })
+        .catch(err => console.error(err));
+}
+
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === currentPage);
+    });
+}
+
+// ================================================
+// DOM READY
+// ================================================
+document.addEventListener('DOMContentLoaded', function () {
+    loadComponents();
+});
+
+// ── Form Helpers ─────────────────────────────────
+function validateForm(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return false;
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(field => {
+        if (!field.value.trim()) {
+            field.classList.add('is-invalid');
+            valid = false;
+        } else {
+            field.classList.remove('is-invalid');
+            field.classList.add('is-valid');
+        }
+    });
+    return valid;
+}
+
+function clearValidation(formId) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.querySelectorAll('.is-invalid, .is-valid').forEach(f => {
+        f.classList.remove('is-invalid', 'is-valid');
+    });
+}
+
+// ── LocalStorage Helpers ──────────────────────────
+function saveToLocalStorage(key, data) {
+    try { localStorage.setItem(key, JSON.stringify(data)); return true; }
+    catch (e) { return false; }
+}
+
+function getFromLocalStorage(key) {
+    try { const d = localStorage.getItem(key); return d ? JSON.parse(d) : null; }
+    catch (e) { return null; }
+}
