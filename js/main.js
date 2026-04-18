@@ -2,6 +2,23 @@
 // main.js — Utility + Cart + Modal + Component Loader
 // ================================================
 
+// ── Configuration ────────────────────────────────
+const CONFIG = {
+    whatsappNumber: '628122940513',
+    cartStorageKey: 'busuharti_cart'
+};
+
+// ── Security Helpers ─────────────────────────────
+function escapeHTML(str) {
+    if (str === null || str === undefined) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
 // ── Format Helpers ──────────────────────────────
 function formatCurrency(amount) {
     return new Intl.NumberFormat('id-ID', {
@@ -46,7 +63,11 @@ window.addEventListener('scroll', function () {
 });
 
 // ── WhatsApp ─────────────────────────────────────
-function orderViaWhatsApp(product) {
+function orderViaWhatsApp(productOrId) {
+    const product = (typeof productOrId === 'object' && productOrId !== null)
+        ? productOrId
+        : products.find(p => p.id === parseInt(productOrId));
+    if (!product) return;
     const msg = encodeURIComponent(
         `Halo, saya tertarik dengan produk:\n\n` +
         `Nama     : ${product.name}\n` +
@@ -54,10 +75,14 @@ function orderViaWhatsApp(product) {
         `Kategori : ${getCategoryName(product.category)}\n\n` +
         `Apakah produk ini masih tersedia?`
     );
-    window.open(`https://wa.me/628122940513?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`, '_blank');
 }
 
-function shareProduct(product) {
+function shareProduct(productOrId) {
+    const product = (typeof productOrId === 'object' && productOrId !== null)
+        ? productOrId
+        : products.find(p => p.id === parseInt(productOrId));
+    if (!product) return;
     if (navigator.share) {
         navigator.share({ title: product.name, text: product.description, url: window.location.href });
     } else {
@@ -69,7 +94,11 @@ function shareProduct(product) {
 // ================================================
 // CART SYSTEM
 // ================================================
-let cart = [];
+let cart = getFromLocalStorage(CONFIG.cartStorageKey) || [];
+
+function saveCart() {
+    saveToLocalStorage(CONFIG.cartStorageKey, cart);
+}
 
 function addToCart(productId) {
     // products harus sudah di-load lewat products.js
@@ -89,12 +118,14 @@ function addToCart(productId) {
     }
 
     updateCartBadge();
-    showToast(`${product.name} ditambahkan ke keranjang`, 'success');
+    saveCart();
+    showToast(`${escapeHTML(product.name)} ditambahkan ke keranjang`, 'success');
 }
 
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== parseInt(productId));
     updateCartBadge();
+    saveCart();
     renderCart();
 }
 
@@ -105,6 +136,7 @@ function updateQty(productId, delta) {
     if (item.qty <= 0) removeFromCart(productId);
     else {
         updateCartBadge();
+        saveCart();
         renderCart();
     }
 }
@@ -153,13 +185,13 @@ function renderCart() {
     // Render cart items
     body.innerHTML = cart.map(item => `
         <div class="d-flex align-items-center gap-3 py-3 border-bottom">
-            <img src="${item.image}" alt="${item.name}"
+            <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}"
                  style="width:70px;height:70px;object-fit:cover;border-radius:8px;"
                  onerror="this.src='images/products/placeholder.jpg'">
             <div class="flex-grow-1">
-                <h6 class="mb-1 fw-bold">${item.name}</h6>
-                <span class="badge bg-light text-dark border small">${getCategoryName(item.category)}</span>
-                <div class="text-primary fw-bold mt-1">${formatCurrency(item.price)}</div>
+                <h6 class="mb-1 fw-bold">${escapeHTML(item.name)}</h6>
+                <span class="badge bg-light text-dark border small">${escapeHTML(getCategoryName(item.category))}</span>
+                <div class="text-primary fw-bold mt-1">${escapeHTML(formatCurrency(item.price))}</div>
             </div>
             <div class="d-flex align-items-center gap-2">
                 <button class="btn btn-outline-secondary btn-sm" onclick="updateQty(${item.id}, -1)">
@@ -196,6 +228,7 @@ function clearCart() {
     if (!confirm('Kosongkan semua keranjang?')) return;
     cart = [];
     updateCartBadge();
+    saveCart();
     renderCart();
 }
 
@@ -215,7 +248,7 @@ function checkoutViaWhatsApp() {
         `Mohon konfirmasi ketersediaan dan info pengiriman. Terima kasih!`
     );
 
-    window.open(`https://wa.me/628122940513?text=${msg}`, '_blank');
+    window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`, '_blank');
 }
 
 // ================================================
@@ -235,58 +268,58 @@ function openProductModal(productId) {
         <div class="row g-4">
             <!-- Gambar -->
             <div class="col-lg-5">
-                <img src="${product.image}" class="img-fluid rounded-3 shadow-sm w-100"
+                <img src="${escapeHTML(product.image)}" class="img-fluid rounded-3 shadow-sm w-100"
                      style="max-height:380px;object-fit:cover;"
-                     alt="${product.name}"
+                     alt="${escapeHTML(product.name)}"
                      onerror="this.src='images/products/placeholder.jpg'">
                 <button class="btn btn-outline-secondary w-100 mt-3"
-                        onclick="shareProduct(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+                        onclick="shareProduct(${product.id})">
                     <i class="fas fa-share-alt me-1"></i> Bagikan Produk
                 </button>
             </div>
             <!-- Info -->
             <div class="col-lg-7">
                 <div class="d-flex flex-wrap gap-2 mb-3">
-                    <span class="badge bg-primary">${getCategoryName(product.category)}</span>
+                    <span class="badge bg-primary">${escapeHTML(getCategoryName(product.category))}</span>
                     ${stockStatus}
                 </div>
-                <h3 class="fw-bold mb-2">${product.name}</h3>
-                <h4 class="text-primary fw-bold mb-3">${formatCurrency(product.price)}</h4>
+                <h3 class="fw-bold mb-2">${escapeHTML(product.name)}</h3>
+                <h4 class="text-primary fw-bold mb-3">${escapeHTML(formatCurrency(product.price))}</h4>
 
                 <!-- Deskripsi -->
-                <p class="text-muted mb-3">${product.description}</p>
+                <p class="text-muted mb-3">${escapeHTML(product.description)}</p>
 
                 <!-- Spesifikasi -->
                 <div class="row g-2 mb-3">
                     <div class="col-6">
                         <div class="d-flex align-items-center gap-2 small">
                             <i class="fas fa-box text-primary"></i>
-                            <span><strong>Material:</strong> ${product.material}</span>
+                            <span><strong>Material:</strong> ${escapeHTML(product.material)}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center gap-2 small">
                             <i class="fas fa-child text-primary"></i>
-                            <span><strong>Usia:</strong> ${product.ageRange}</span>
+                            <span><strong>Usia:</strong> ${escapeHTML(product.ageRange)}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center gap-2 small">
                             <i class="fas fa-weight text-primary"></i>
-                            <span><strong>Berat:</strong> ${formatWeight(product.weight)}</span>
+                            <span><strong>Berat:</strong> ${escapeHTML(formatWeight(product.weight))}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center gap-2 small">
                             <i class="fas fa-map-marker-alt text-primary"></i>
-                            <span><strong>Asal:</strong> ${product.origin}</span>
+                            <span><strong>Asal:</strong> ${escapeHTML(product.origin)}</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Fitur -->
                 <ul class="feature-list mb-4">
-                    ${product.features.map(f => `<li>${f}</li>`).join('')}
+                    ${product.features.map(f => `<li>${escapeHTML(f)}</li>`).join('')}
                 </ul>
 
                 <!-- Tombol Aksi -->
@@ -297,7 +330,7 @@ function openProductModal(productId) {
                         <i class="fas fa-shopping-cart me-2"></i> Tambah ke Keranjang
                     </button>
                     <button class="btn btn-success btn-lg"
-                            onclick="orderViaWhatsApp(${JSON.stringify(product).replace(/"/g, '&quot;')})"
+                            onclick="orderViaWhatsApp(${product.id})"
                             ${product.stock === 0 ? 'disabled' : ''}>
                         <i class="fab fa-whatsapp me-2"></i> Pesan via WhatsApp
                     </button>
@@ -322,8 +355,8 @@ function showToast(message, type = 'info') {
     container.insertAdjacentHTML('beforeend', `
         <div id="${id}" class="toast align-items-center text-white ${bg} border-0" role="alert">
             <div class="d-flex">
-                <div class="toast-body">${message}</div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+                <div class="toast-body">${escapeHTML(message)}</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Tutup"></button>
             </div>
         </div>
     `);
@@ -369,8 +402,19 @@ function loadComponents() {
             if (footer && footerPlaceholder) {
                 footerPlaceholder.replaceWith(footer);
             }
+
+            // Restore WA link from CONFIG
+            const waFooterLink = document.querySelector('#main-footer a[href*="wa.me"]');
+            if (waFooterLink) waFooterLink.href = `https://wa.me/${CONFIG.whatsappNumber}`;
+
+            // Restore cart badge after components loaded
+            updateCartBadge();
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            console.error('Gagal memuat komponen:', err);
+            const nb = document.getElementById('navbar-placeholder');
+            if (nb) nb.innerHTML = '<nav class="navbar bg-light shadow-sm"><div class="container"><a class="navbar-brand fw-bold text-primary" href="index.html"><i class="fas fa-store"></i> Toko Bu Suharti</a></div></nav>';
+        });
 }
 
 function setActiveNavLink() {
