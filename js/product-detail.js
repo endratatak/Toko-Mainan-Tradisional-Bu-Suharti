@@ -58,13 +58,13 @@ function displayProductDetail(product) {
             <!-- Gambar Produk -->
             <div class="col-lg-5 mb-4">
                 <div class="sticky-top" style="top: 100px;">
-                    <img src="${product.image}"
+                    <img src="${escapeHTML(product.image)}"
                         class="product-detail-image"
-                        alt="${product.name}"
+                        alt="${escapeHTML(product.name)}"
                         onerror="this.src='images/products/placeholder.jpg'">
                     <div class="mt-3 d-flex gap-2">
                         <button class="btn btn-outline-secondary flex-fill"
-                                onclick="shareProduct(${JSON.stringify(product).replace(/"/g, '&quot;')})">
+                                onclick="shareProduct(${product.id})">
                             <i class="fas fa-share-alt me-1"></i> Bagikan
                         </button>
                         <a href="index.html" class="btn btn-outline-primary flex-fill">
@@ -77,21 +77,21 @@ function displayProductDetail(product) {
             <!-- Info Produk -->
             <div class="col-lg-7">
                 <div class="mb-3 d-flex flex-wrap gap-2">
-                    <span class="badge bg-primary fs-6">${getCategoryName(product.category)}</span>
+                    <span class="badge bg-primary fs-6">${escapeHTML(getCategoryName(product.category))}</span>
                     ${stockStatus}
                 </div>
 
-                <h1 class="fw-bold mb-3">${product.name}</h1>
+                <h1 class="fw-bold mb-3">${escapeHTML(product.name)}</h1>
 
                 <div class="mb-4">
-                    <h2 class="text-primary fw-bold">${formatCurrency(product.price)}</h2>
+                    <h2 class="text-primary fw-bold">${escapeHTML(formatCurrency(product.price))}</h2>
                 </div>
 
                 <!-- Deskripsi -->
                 <div class="card bg-light mb-4">
                     <div class="card-body">
                         <h5 class="card-title fw-bold mb-3">Deskripsi Produk</h5>
-                        <p class="card-text">${product.description}</p>
+                        <p class="card-text">${escapeHTML(product.description)}</p>
                     </div>
                 </div>
 
@@ -104,24 +104,24 @@ function displayProductDetail(product) {
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fas fa-box text-primary me-2"></i>
                                     <strong class="me-2">Material:</strong>
-                                    <span>${product.material}</span>
+                                    <span>${escapeHTML(product.material)}</span>
                                 </div>
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fas fa-weight text-primary me-2"></i>
                                     <strong class="me-2">Berat:</strong>
-                                    <span>${formatWeight(product.weight)}</span>
+                                    <span>${escapeHTML(formatWeight(product.weight))}</span>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fas fa-child text-primary me-2"></i>
                                     <strong class="me-2">Usia:</strong>
-                                    <span>${product.ageRange}</span>
+                                    <span>${escapeHTML(product.ageRange)}</span>
                                 </div>
                                 <div class="d-flex align-items-center mb-2">
                                     <i class="fas fa-map-marker-alt text-primary me-2"></i>
                                     <strong class="me-2">Asal:</strong>
-                                    <span>${product.origin}</span>
+                                    <span>${escapeHTML(product.origin)}</span>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ function displayProductDetail(product) {
                     <div class="card-body">
                         <h5 class="card-title fw-bold mb-3">Fitur & Keunggulan</h5>
                         <ul class="feature-list">
-                            ${product.features.map(f => `<li>${f}</li>`).join('')}
+                            ${product.features.map(f => `<li>${escapeHTML(f)}</li>`).join('')}
                         </ul>
                     </div>
                 </div>
@@ -142,7 +142,7 @@ function displayProductDetail(product) {
                 <div class="row g-3">
                     <div class="col-12">
                         <button class="btn btn-success btn-lg w-100"
-                                onclick="orderViaWhatsApp(${JSON.stringify(product).replace(/"/g, '&quot;')})"
+                                onclick="orderViaWhatsApp(${product.id})"
                                 ${product.stock === 0 ? 'disabled' : ''}>
                             <i class="fab fa-whatsapp me-2"></i> Pesan via WhatsApp
                         </button>
@@ -186,15 +186,15 @@ function loadRelatedProducts(currentProduct) {
             <div class="col-md-6 col-lg-3">
                 <div class="card product-card h-100 shadow-sm">
                     <div class="product-image-wrapper">
-                        <img src="${product.image}" class="card-img-top product-image" alt="${product.name}"
+                        <img src="${escapeHTML(product.image)}" class="card-img-top product-image" alt="${escapeHTML(product.name)}"
                             onerror="this.src='images/products/placeholder.jpg'">
                         <div class="product-badge">${stockBadge}</div>
                     </div>
                     <div class="card-body d-flex flex-column">
-                        <h6 class="card-title fw-bold">${product.name}</h6>
-                        <p class="text-muted small flex-grow-1">${truncateText(product.description, 60)}</p>
+                        <h6 class="card-title fw-bold">${escapeHTML(product.name)}</h6>
+                        <p class="text-muted small flex-grow-1">${escapeHTML(truncateText(product.description, 60))}</p>
                         <div class="d-flex justify-content-between align-items-center mt-2">
-                            <h5 class="text-primary mb-0">${formatCurrency(product.price)}</h5>
+                            <h5 class="text-primary mb-0">${escapeHTML(formatCurrency(product.price))}</h5>
                             <a href="product-detail.html?id=${product.id}" class="btn btn-primary btn-sm">
                                 Detail
                             </a>
