@@ -5,7 +5,8 @@
 // ── Configuration ────────────────────────────────
 const CONFIG = {
     whatsappNumber: '628122940513',
-    cartStorageKey: 'busuharti_cart'
+    cartStorageKey: 'busuharti_cart',
+    wishlistStorageKey: 'busuharti_wishlist'
 };
 
 // ── Security Helpers ─────────────────────────────
@@ -142,15 +143,12 @@ function updateQty(productId, delta) {
 }
 
 function updateCartBadge() {
-    const badge = document.getElementById('cartBadge');
-    if (!badge) return;
     const total = cart.reduce((sum, i) => sum + i.qty, 0);
-    if (total > 0) {
+    [document.getElementById('cartBadge'), document.getElementById('bottomNavCartBadge')].forEach(badge => {
+        if (!badge) return;
         badge.textContent = total;
-        badge.classList.remove('d-none');
-    } else {
-        badge.classList.add('d-none');
-    }
+        badge.classList.toggle('d-none', total === 0);
+    });
 }
 
 function getCartTotal() {
@@ -249,6 +247,41 @@ function checkoutViaWhatsApp() {
     );
 
     window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${msg}`, '_blank');
+}
+
+// ================================================
+// WISHLIST SYSTEM
+// ================================================
+let wishlist = getFromLocalStorage(CONFIG.wishlistStorageKey) || [];
+
+function saveWishlist() {
+    saveToLocalStorage(CONFIG.wishlistStorageKey, wishlist);
+}
+
+function isInWishlist(productId) {
+    return wishlist.includes(parseInt(productId));
+}
+
+function toggleWishlist(productId) {
+    const id = parseInt(productId);
+    const idx = wishlist.indexOf(id);
+    if (idx === -1) {
+        wishlist.push(id);
+        showToast('Ditambahkan ke wishlist', 'success');
+    } else {
+        wishlist.splice(idx, 1);
+        showToast('Dihapus dari wishlist', 'info');
+    }
+    saveWishlist();
+    initWishlistButtons();
+}
+
+function initWishlistButtons() {
+    document.querySelectorAll('.wishlist-btn[data-product-id]').forEach(btn => {
+        const id = parseInt(btn.dataset.productId);
+        btn.classList.toggle('active', isInWishlist(id));
+        btn.setAttribute('aria-label', isInWishlist(id) ? 'Hapus dari wishlist' : 'Tambah ke wishlist');
+    });
 }
 
 // ================================================
@@ -403,12 +436,24 @@ function loadComponents() {
                 footerPlaceholder.replaceWith(footer);
             }
 
+            // Inject bottom nav
+            const bottomNav = doc.getElementById('bottom-nav');
+            if (bottomNav && !document.getElementById('bottom-nav')) {
+                document.body.appendChild(bottomNav);
+                // Mark active item
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.bottom-nav-item[href]').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === currentPage);
+                });
+            }
+
             // Restore WA link from CONFIG
             const waFooterLink = document.querySelector('#main-footer a[href*="wa.me"]');
             if (waFooterLink) waFooterLink.href = `https://wa.me/${CONFIG.whatsappNumber}`;
 
-            // Restore cart badge after components loaded
+            // Restore cart badge and wishlist state after components loaded
             updateCartBadge();
+            initWishlistButtons();
         })
         .catch(err => {
             console.error('Gagal memuat komponen:', err);

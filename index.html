@@ -27,6 +27,10 @@
          
          
           referrerpolicy="no-referrer">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -37,9 +41,46 @@
     <!-- Hero Section -->
     <section class="hero-section text-white text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Mainan Tradisional Indonesia</h1>
+            <div class="hero-badge"><i class="fas fa-award me-2"></i>Dipercaya Keluarga Indonesia Sejak 1995</div>
+            <h1 class="display-4 fw-bold mb-3">Mainan Tradisional<br>Indonesia</h1>
             <p class="lead mb-4">Melestarikan Kearifan Lokal Melalui Permainan yang Mendidik</p>
-            <p class="text-white-50">Sejak 1995 - Dipercaya Keluarga Indonesia</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="num">30+</span>
+                    <span class="label">Tahun Berpengalaman</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="num">500+</span>
+                    <span class="label">Jenis Produk</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="num">10rb+</span>
+                    <span class="label">Pelanggan Puas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Pills -->
+    <section class="category-pills-section">
+        <div class="container">
+            <div class="pills-scroll">
+                <a href="#" class="category-pill active" data-cat="" onclick="filterByCategory(''); return false;">
+                    <i class="fas fa-th-large"></i> Semua
+                </a>
+                <a href="#" class="category-pill" data-cat="tradisional" onclick="filterByCategory('tradisional'); return false;">
+                    <i class="fas fa-gamepad"></i> Tradisional
+                </a>
+                <a href="#" class="category-pill" data-cat="edukatif" onclick="filterByCategory('edukatif'); return false;">
+                    <i class="fas fa-book"></i> Edukatif
+                </a>
+                <a href="#" class="category-pill" data-cat="kayu" onclick="filterByCategory('kayu'); return false;">
+                    <i class="fas fa-tree"></i> Kayu
+                </a>
+                <a href="#" class="category-pill" data-cat="outdoor" onclick="filterByCategory('outdoor'); return false;">
+                    <i class="fas fa-sun"></i> Outdoor
+                </a>
+            </div>
         </div>
     </section>
 
