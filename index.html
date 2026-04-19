@@ -43,7 +43,10 @@
         <div class="container">
             <div class="hero-badge"><i class="fas fa-award me-2"></i>Dipercaya Keluarga Indonesia Sejak 1995</div>
             <h1 class="display-4 fw-bold mb-3">Mainan Tradisional<br>Indonesia</h1>
-            <p class="lead mb-4">Melestarikan Kearifan Lokal Melalui Permainan yang Mendidik</p>
+            <p class="lead mb-2">Melestarikan Kearifan Lokal Melalui Permainan yang Mendidik</p>
+            <a href="#katalog" class="btn-hero-cta">
+                Lihat Katalog <i class="fas fa-arrow-right ms-2"></i>
+            </a>
             <div class="hero-stats">
                 <div class="hero-stat">
                     <span class="num">30+</span>
@@ -126,7 +129,7 @@
     </section>
 
     <!-- Product Catalog -->
-    <section class="catalog-section py-5">
+    <section class="catalog-section py-5" id="katalog">
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
@@ -135,10 +138,15 @@
                 </div>
             </div>
             <div id="productGrid" class="row g-4"></div>
-            <div id="noResults" class="text-center py-5 d-none">
-                <i class="fas fa-search fa-3x text-muted mb-3"></i>
-                <h4>Produk tidak ditemukan</h4>
-                <p class="text-muted">Coba gunakan kata kunci atau filter lain</p>
+            <div id="noResults" class="empty-state text-center d-none">
+                <div class="empty-state-icon">
+                    <i class="fas fa-search-minus"></i>
+                </div>
+                <h4 class="mt-2">Produk tidak ditemukan</h4>
+                <p class="text-muted">Coba ubah kata kunci atau pilih kategori lain</p>
+                <button class="btn btn-outline-primary mt-1" onclick="resetFilters()">
+                    <i class="fas fa-redo me-1"></i> Reset Filter
+                </button>
             </div>
         </div>
     </section>
