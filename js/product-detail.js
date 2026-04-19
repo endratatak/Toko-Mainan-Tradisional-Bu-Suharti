@@ -3,7 +3,8 @@
 // formatCurrency(), formatWeight(), orderViaWhatsApp(), sendEmailInquiry(),
 // shareProduct() semuanya didefinisikan di main.js
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await window.productsReady;
     loadProductDetail();
 });
 

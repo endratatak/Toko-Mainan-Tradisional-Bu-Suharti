@@ -2,9 +2,11 @@
 // getCategoryName(), truncateText(), formatCurrency(),
 // openProductModal(), addToCart() — semua di main.js
 
-let filteredProducts = [...products];
+let filteredProducts = [];
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    await window.productsReady;
+    filteredProducts = [...products];
     displayProducts(products);
     setupEventListeners();
 });
