@@ -191,7 +191,7 @@ function renderCart() {
         <div class="d-flex align-items-center gap-3 py-3 border-bottom">
             <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}"
                  style="width:70px;height:70px;object-fit:cover;border-radius:8px;"
-                 onerror="this.src='images/products/placeholder.jpg'">
+                 onerror="this.onerror=null;this.src='images/products/placeholder.jpg'">
             <div class="flex-grow-1">
                 <h6 class="mb-1 fw-bold">${escapeHTML(item.name)}</h6>
                 <span class="badge bg-light text-dark border small">${escapeHTML(getCategoryName(item.category))}</span>
@@ -275,7 +275,7 @@ function openProductModal(productId) {
                 <img src="${escapeHTML(product.image)}" class="img-fluid rounded-3 shadow-sm w-100"
                      style="max-height:380px;object-fit:cover;"
                      alt="${escapeHTML(product.name)}"
-                     onerror="this.src='images/products/placeholder.jpg'">
+                     onerror="this.onerror=null;this.src='images/products/placeholder.jpg'">
                 <button class="btn btn-outline-secondary w-100 mt-3"
                         onclick="shareProduct(${product.id})">
                     <i class="fas fa-share-alt me-1"></i> Bagikan Produk

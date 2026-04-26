@@ -43,7 +43,7 @@ function createProductCard(product) {
                 <div class="product-image-wrapper" style="cursor:pointer;" onclick="openProductModal(${product.id})">
                     <img src="${escapeHTML(product.image)}" class="card-img-top product-image" alt="${escapeHTML(product.name)}"
                          loading="lazy"
-                         onerror="this.src='images/products/placeholder.jpg'">
+                         onerror="this.onerror=null;this.src='images/products/placeholder.jpg'">
                     <div class="product-badge">${stockBadge}</div>
                 </div>
                 <div class="card-body d-flex flex-column">

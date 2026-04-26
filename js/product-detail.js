@@ -65,7 +65,7 @@ function displayProductDetail(product) {
                         class="product-detail-image"
                         alt="${escapeHTML(product.name)}"
                         loading="lazy"
-                        onerror="this.src='images/products/placeholder.jpg'">
+                        onerror="this.onerror=null;this.src='images/products/placeholder.jpg'">
                     <div class="mt-3 d-flex gap-2">
                         <button class="btn btn-outline-secondary flex-fill"
                                 onclick="shareProduct(${product.id})">
@@ -192,7 +192,7 @@ function loadRelatedProducts(currentProduct) {
                     <div class="product-image-wrapper">
                         <img src="${escapeHTML(product.image)}" class="card-img-top product-image" alt="${escapeHTML(product.name)}"
                             loading="lazy"
-                            onerror="this.src='images/products/placeholder.jpg'">
+                            onerror="this.onerror=null;this.src='images/products/placeholder.jpg'">
                         <div class="product-badge">${stockBadge}</div>
                     </div>
                     <div class="card-body d-flex flex-column">
