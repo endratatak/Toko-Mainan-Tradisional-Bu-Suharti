@@ -284,6 +284,25 @@ footer {
     min-height: 150px;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+    .contact-form .row.g-3 > .col-md-6 {
+        margin-bottom: 1rem;
+    }
+
+    .contact-form .form-control {
+        font-size: 1rem;
+    }
+
+    .contact-form textarea {
+        min-height: 120px;
+    }
+
+    .contact-form .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
 /* ── About / Timeline ── */
 .about-section {
     padding: 60px 0;
@@ -405,6 +424,85 @@ footer {
     }
 }
 
+@media (max-width: 575px) {
+    .hero-section {
+        padding: 30px 0 !important;
+    }
+
+    .hero-section h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .filter-section .form-label {
+        font-size: 0.8rem;
+    }
+
+    .filter-section .form-control,
+    .filter-section .form-select {
+        font-size: 0.95rem;
+    }
+
+    .product-image-wrapper {
+        height: 180px;
+    }
+
+    .product-card .card-body {
+        padding: 1rem;
+    }
+
+    .product-card h5 {
+        font-size: 1rem;
+    }
+
+    .product-card .btn {
+        font-size: 0.85rem;
+        padding: 0.55rem 0.75rem;
+    }
+
+    .product-meta small {
+        font-size: 0.78rem;
+    }
+
+    .mobile-bottom-nav {
+        height: 68px;
+    }
+
+    .mobile-bottom-nav a {
+        font-size: 9px;
+    }
+
+    .scroll-top-btn {
+        bottom: 78px;
+        right: 16px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-section {
+        padding: 100px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 4rem;
+    }
+
+    .product-image-wrapper {
+        height: 320px;
+    }
+
+    .product-card {
+        min-height: 100%;
+    }
+
+    .product-card .card-body {
+        padding: 1.2rem;
+    }
+}
+
 /* ── Print Styles ── */
 @media print {
     .navbar,
@@ -466,7 +564,7 @@ footer {
   .mobile-bottom-nav a:hover { color: #198754; }
   .mobile-bottom-nav svg {
     width: 22px; height: 22px;
-    stroke: currentColor; fill: none;
+    stroke: currentColor; fill: currentColor;
     stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
   }
   .mobile-bottom-nav .cart-badge { position: relative; }

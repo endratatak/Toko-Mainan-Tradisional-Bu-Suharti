@@ -1,6 +1,6 @@
 // Product Detail Page Logic
 // Catatan: getCategoryName(), truncateText(), viewProductDetail(),
-// formatCurrency(), formatWeight(), orderViaWhatsApp(), sendEmailInquiry(),
+// formatCurrency(), formatWeight(), orderViaWhatsApp(),
 // shareProduct() semuanya didefinisikan di main.js
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -41,6 +41,9 @@ function loadProductDetail() {
     document.getElementById('breadcrumbProduct').textContent = product.name;
     document.title = `${product.name} - Toko Mainan Tradisional Bu Suharti`;
 
+    // Update meta tags for SEO
+    updateMetaTags(product);
+
     displayProductDetail(product);
     loadRelatedProducts(product);
 }
@@ -61,6 +64,7 @@ function displayProductDetail(product) {
                     <img src="${escapeHTML(product.image)}"
                         class="product-detail-image"
                         alt="${escapeHTML(product.name)}"
+                        loading="lazy"
                         onerror="this.src='images/products/placeholder.jpg'">
                     <div class="mt-3 d-flex gap-2">
                         <button class="btn btn-outline-secondary flex-fill"
@@ -187,6 +191,7 @@ function loadRelatedProducts(currentProduct) {
                 <div class="card product-card h-100 shadow-sm">
                     <div class="product-image-wrapper">
                         <img src="${escapeHTML(product.image)}" class="card-img-top product-image" alt="${escapeHTML(product.name)}"
+                            loading="lazy"
                             onerror="this.src='images/products/placeholder.jpg'">
                         <div class="product-badge">${stockBadge}</div>
                     </div>
@@ -206,4 +211,38 @@ function loadRelatedProducts(currentProduct) {
     }).join('');
 
     document.getElementById('relatedProducts').innerHTML = relatedHTML;
+}
+
+function updateMetaTags(product) {
+    const baseUrl = 'https://endratatak.github.io/Toko-Mainan-Tradisional-Bu-Suharti/';
+    const productUrl = `${baseUrl}product-detail.html?id=${product.id}`;
+
+    // Update title
+    document.title = `${product.name} - Toko Mainan Tradisional Bu Suharti`;
+
+    // Update meta description
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) {
+        descriptionMeta.setAttribute('content', truncateText(product.description, 160));
+    }
+
+    // Update Open Graph
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute('content', product.name);
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute('content', truncateText(product.description, 200));
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) ogImage.setAttribute('content', product.image.startsWith('http') ? product.image : baseUrl + product.image);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', productUrl);
+
+    // Update Twitter Card
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', product.name);
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute('content', truncateText(product.description, 200));
 }
