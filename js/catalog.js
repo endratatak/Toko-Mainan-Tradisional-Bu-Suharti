@@ -2,10 +2,11 @@
 // getCategoryName(), truncateText(), formatCurrency(),
 // openProductModal(), addToCart() — semua di main.js
 
-let filteredProducts = [...products];
+const catalogProducts = products.filter(p => p.price > 0);
+let filteredProducts = [...catalogProducts];
 
 document.addEventListener('DOMContentLoaded', function() {
-    displayProducts(products);
+    displayProducts(catalogProducts);
     setupEventListeners();
 });
 
@@ -83,7 +84,7 @@ function applyFilters() {
     const category   = document.getElementById('categoryFilter').value;
     const priceRange = document.getElementById('priceFilter').value;
 
-    filteredProducts = products.filter(product => {
+    filteredProducts = catalogProducts.filter(product => {
         // Filter hanya berdasarkan nama produk
         const matchesName = !searchTerm || product.name.toLowerCase().includes(searchTerm);
 
@@ -105,6 +106,6 @@ function resetFilters() {
     document.getElementById('searchInput').value = '';
     document.getElementById('categoryFilter').value = '';
     document.getElementById('priceFilter').value = '';
-    filteredProducts = [...products];
-    displayProducts(products);
+    filteredProducts = [...catalogProducts];
+    displayProducts(catalogProducts);
 }

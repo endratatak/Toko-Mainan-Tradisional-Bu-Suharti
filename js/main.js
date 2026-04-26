@@ -142,14 +142,18 @@ function updateQty(productId, delta) {
 }
 
 function updateCartBadge() {
-    const badge = document.getElementById('cartBadge');
-    if (!badge) return;
     const total = cart.reduce((sum, i) => sum + i.qty, 0);
-    if (total > 0) {
+
+    const badge = document.getElementById('cartBadge');
+    if (badge) {
         badge.textContent = total;
-        badge.classList.remove('d-none');
-    } else {
-        badge.classList.add('d-none');
+        badge.classList.toggle('d-none', total === 0);
+    }
+
+    const mobileBadge = document.getElementById('mobileCartCount');
+    if (mobileBadge) {
+        mobileBadge.textContent = total;
+        mobileBadge.style.display = total > 0 ? 'flex' : 'none';
     }
 }
 
