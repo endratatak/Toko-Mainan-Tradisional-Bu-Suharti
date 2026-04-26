@@ -8,8 +8,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Toko Mainan Tradisional Bu Suharti">
     <meta property="og:description" content="Melestarikan Permainan Tradisional Indonesia. Mainan kayu handmade berkualitas sejak 1995.">
-    <meta property="og:url" content="https://endratatak.github.io/Toko-Mainan-Tradisional-Bu-Suharti/">
-    <meta property="og:image" content="https://endratatak.github.io/Toko-Mainan-Tradisional-Bu-Suharti/images/products/FotoDariLuar.jpg">
+    <meta property="og:image" content="images/products/FotoDariLuar.jpg">
     <meta property="og:locale" content="id_ID">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -28,6 +27,10 @@
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous"
           referrerpolicy="no-referrer">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -38,20 +41,38 @@
     <!-- Hero Section -->
     <section class="hero-section text-white text-center py-5">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-3">Mainan Tradisional Indonesia</h1>
-            <p class="lead mb-4">Melestarikan Kearifan Lokal Melalui Permainan yang Mendidik</p>
-            <p class="text-white-50">Sejak 1995 - Dipercaya Keluarga Indonesia</p>
+            <div class="hero-badge"><i class="fas fa-award me-2"></i>Dipercaya Keluarga Indonesia Sejak 1995</div>
+            <h1 class="display-4 fw-bold mb-3">Mainan Tradisional<br>Indonesia</h1>
+            <p class="lead mb-2">Melestarikan Kearifan Lokal Melalui Permainan yang Mendidik</p>
+            <a href="#katalog" class="btn-hero-cta">
+                Lihat Katalog <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="num">30+</span>
+                    <span class="label">Tahun Berpengalaman</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="num">500+</span>
+                    <span class="label">Jenis Produk</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="num">10rb+</span>
+                    <span class="label">Pelanggan Puas</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Filter & Search Section -->
-    <section class="filter-section py-4 bg-light">
+    <section class="filter-section py-4">
         <div class="container">
-            <div class="row g-3">
+            <!-- Search + Filter Row -->
+            <div class="row g-3 mb-3">
                 <div class="col-md-4">
                     <label class="form-label small text-muted mb-1">Nama Produk</label>
                     <div class="input-group">
-                        <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
                         <input type="text" id="searchInput" class="form-control" placeholder="Cari nama produk...">
                     </div>
                 </div>
@@ -82,11 +103,29 @@
                     </button>
                 </div>
             </div>
+            <!-- Category Pill Chips (di bawah search bar) -->
+            <div class="pills-scroll">
+                <a href="#" class="category-pill active" data-cat="" onclick="filterByCategory(''); return false;">
+                    <i class="fas fa-th-large"></i> Semua
+                </a>
+                <a href="#" class="category-pill" data-cat="tradisional" onclick="filterByCategory('tradisional'); return false;">
+                    <i class="fas fa-gamepad"></i> Tradisional
+                </a>
+                <a href="#" class="category-pill" data-cat="edukatif" onclick="filterByCategory('edukatif'); return false;">
+                    <i class="fas fa-book"></i> Edukatif
+                </a>
+                <a href="#" class="category-pill" data-cat="kayu" onclick="filterByCategory('kayu'); return false;">
+                    <i class="fas fa-tree"></i> Kayu
+                </a>
+                <a href="#" class="category-pill" data-cat="outdoor" onclick="filterByCategory('outdoor'); return false;">
+                    <i class="fas fa-sun"></i> Outdoor
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Product Catalog -->
-    <section class="catalog-section py-5">
+    <section class="catalog-section py-5" id="katalog">
         <div class="container">
             <div class="row mb-4">
                 <div class="col">
@@ -95,10 +134,15 @@
                 </div>
             </div>
             <div id="productGrid" class="row g-4"></div>
-            <div id="noResults" class="text-center py-5 d-none">
-                <i class="fas fa-search fa-3x text-muted mb-3"></i>
-                <h4>Produk tidak ditemukan</h4>
-                <p class="text-muted">Coba gunakan kata kunci atau filter lain</p>
+            <div id="noResults" class="empty-state text-center d-none">
+                <div class="empty-state-icon">
+                    <i class="fas fa-search-minus"></i>
+                </div>
+                <h4 class="mt-2">Produk tidak ditemukan</h4>
+                <p class="text-muted">Coba ubah kata kunci atau pilih kategori lain</p>
+                <button class="btn btn-outline-primary mt-1" onclick="resetFilters()">
+                    <i class="fas fa-redo me-1"></i> Reset Filter
+                </button>
             </div>
         </div>
     </section>
@@ -118,15 +162,9 @@
             integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVzdl1"
             crossorigin="anonymous"></script>
     <script src="js/products.js"></script>
+    <script src="js/sheets-loader.js"></script>
     <script src="js/catalog.js"></script>
     <script src="js/main.js"></script>
 
-<!-- Mobile Bottom Nav -->
-<nav class="mobile-bottom-nav">
-  <a href="index.html" class="active"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3L21 9.5V20H15V14H9V20H3V9.5Z"/></svg>Beranda</a>
-  <a href="about.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>Tentang</a>
-  <a href="#" onclick="openCart();return false;" class="cart-badge"><svg viewBox="0 0 24 24"><path d="M6 2L3 6V20A2 2 0 005 22H19A2 2 0 0021 20V6L18 2Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10A4 4 0 018 10"/></svg>Keranjang<span class="cart-badge-count" id="mobileCartCount" style="display:none">0</span></a>
-  <a href="contact.html"><svg viewBox="0 0 24 24"><path d="M22 16.92V19.92A2 2 0 0120 22 19.79 19.79 0 012 4.08 2 2 0 014.11 2H7.09A2 2 0 019 3.72L10.27 8.05A2 2 0 019.76 10L8.09 11.67A16 16 0 0012.33 15.91L14 14.24A2 2 0 0115.94 13.73L20.27 15A2 2 0 0122 16.92Z"/></svg>Kontak</a>
-</nav>
 </body>
 </html>
