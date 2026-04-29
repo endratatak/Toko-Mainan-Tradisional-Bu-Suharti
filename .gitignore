@@ -22,10 +22,10 @@ yarn-error.log*
 *.temp
 .cache/
 
-# Optional: Uncomment if using Node.js tools
-# node_modules/
-# package-lock.json
-# yarn.lock
+# Node.js
+node_modules/
+npm-debug.log*
+package-lock.json
 
 # Optional: Uncomment if compiling assets
 # dist/
