@@ -40,7 +40,4 @@ package-lock.json
 *.bak
 *.backup
 
-# buat file .gitignore
-echo ".DS_Store
-Thumbs.db
-.vscode/settings.json" > .gitignore.claude/
+.claude/
