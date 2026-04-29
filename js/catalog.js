@@ -5,11 +5,71 @@
 const catalogProducts = products.filter(p => p.price > 0);
 let filteredProducts = [...catalogProducts];
 
+const activeFilters = { category: '', price: '', search: '' };
+
 document.addEventListener('DOMContentLoaded', function() {
     showSkeletons();
-    displayProducts(catalogProducts);
     setupEventListeners();
+    readURL();
 });
+
+// ── Filter State ──────────────────────────────────
+
+function setFilter(key, value) {
+    activeFilters[key] = value;
+    syncUI();
+    updateURL();
+    applyFilters();
+}
+
+function syncUI() {
+    document.getElementById('searchInput').value      = activeFilters.search;
+    document.getElementById('categoryFilter').value   = activeFilters.category;
+    document.getElementById('priceFilter').value      = activeFilters.price;
+
+    document.querySelectorAll('.category-pill').forEach(pill => {
+        pill.classList.toggle('active', pill.dataset.cat === activeFilters.category);
+    });
+}
+
+function updateURL() {
+    const params = new URLSearchParams();
+    if (activeFilters.search)   params.set('search',   activeFilters.search);
+    if (activeFilters.category) params.set('category', activeFilters.category);
+    if (activeFilters.price)    params.set('price',    activeFilters.price);
+    history.replaceState(null, '', params.toString() ? '?' + params.toString() : '?');
+}
+
+function readURL() {
+    const params = new URLSearchParams(window.location.search);
+    activeFilters.search   = params.get('search')   || '';
+    activeFilters.category = params.get('category') || '';
+    activeFilters.price    = params.get('price')    || '';
+    syncUI();
+    applyFilters();
+}
+
+// ── Event Listeners ───────────────────────────────
+
+function setupEventListeners() {
+    document.getElementById('searchInput').addEventListener('input', function() {
+        setFilter('search', this.value.trim());
+    });
+    document.getElementById('categoryFilter').addEventListener('change', function() {
+        setFilter('category', this.value);
+    });
+    document.getElementById('priceFilter').addEventListener('change', function() {
+        setFilter('price', this.value);
+    });
+    document.getElementById('resetFilter').addEventListener('click', resetFilters);
+}
+
+// Dipanggil dari onclick di category pills (index.html)
+function filterByCategory(cat) {
+    setFilter('category', cat);
+}
+
+// ── Render ────────────────────────────────────────
 
 function showSkeletons(n = 8) {
     const grid = document.getElementById('productGrid');
@@ -89,27 +149,18 @@ function createProductCard(product) {
     `;
 }
 
-function setupEventListeners() {
-    document.getElementById('searchInput').addEventListener('input', applyFilters);
-    document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-    document.getElementById('priceFilter').addEventListener('change', applyFilters);
-    document.getElementById('resetFilter').addEventListener('click', resetFilters);
-}
+// ── Filter Logic ──────────────────────────────────
 
 function applyFilters() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
-    const category   = document.getElementById('categoryFilter').value;
-    const priceRange = document.getElementById('priceFilter').value;
+    const { search, category, price } = activeFilters;
 
     filteredProducts = catalogProducts.filter(product => {
-        // Filter hanya berdasarkan nama produk
-        const matchesName = !searchTerm || product.name.toLowerCase().includes(searchTerm);
-
+        const matchesName     = !search   || product.name.toLowerCase().includes(search.toLowerCase());
         const matchesCategory = !category || product.category === category;
 
         let matchesPrice = true;
-        if (priceRange) {
-            const [min, max] = priceRange.split('-').map(Number);
+        if (price) {
+            const [min, max] = price.split('-').map(Number);
             matchesPrice = product.price >= min && product.price <= max;
         }
 
@@ -120,9 +171,11 @@ function applyFilters() {
 }
 
 function resetFilters() {
-    document.getElementById('searchInput').value = '';
-    document.getElementById('categoryFilter').value = '';
-    document.getElementById('priceFilter').value = '';
+    activeFilters.category = '';
+    activeFilters.price    = '';
+    activeFilters.search   = '';
+    history.replaceState(null, '', '?');
+    syncUI();
     filteredProducts = [...catalogProducts];
     displayProducts(catalogProducts);
 }
