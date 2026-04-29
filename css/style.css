@@ -741,3 +741,5 @@ footer h5, footer h6 { color: var(--accent-light) !important; }
     .navbar, .filter-section, .category-pills-section,
     footer, .scroll-top-btn, .bottom-nav { display: none !important; }
 }
+
+.visually-hidden { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }

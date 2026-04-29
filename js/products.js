@@ -14,6 +14,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "5+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng kayu tradisional bermotif ayam, kayu albasia dengan cat natural, buatan pengrajin Yogyakarta",
         features: [
             "Kayu albasia ringan",
             "Cat natural non-toxic",
@@ -33,6 +34,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "5+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng kayu tradisional bermotif macan dengan ukiran detail, kayu albasia dengan cat warna cerah, buatan pengrajin Yogyakarta",
         features: [
             "Ukiran tangan detail",
             "Cat warna cerah",
@@ -52,6 +54,7 @@ const products = [
         material: "Kayu Jati",
         ageRange: "8+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng macan premium dengan ukiran halus dan cat berkualitas tinggi, kayu jati pilihan, buatan pengrajin Yogyakarta",
         features: [
             "Kayu jati berkualitas",
             "Detail ukiran lebih halus",
@@ -71,6 +74,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "5+ tahun",
         origin: "Solo",
+        altText: "Topeng wajah tradisional Jawa dengan ekspresi khas, kayu albasia dengan cat natural aman, buatan pengrajin Solo",
         features: [
             "Ekspresi wajah khas Jawa",
             "Ringan dan nyaman dipakai",
@@ -90,6 +94,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "6+ tahun",
         origin: "Solo",
+        altText: "Topeng muka klasik dengan motif tradisional detail dan finishing halus, kayu albasia, buatan pengrajin Solo",
         features: [
             "Desain klasik tradisional",
             "Ukiran motif khas",
@@ -109,6 +114,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "6+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng perpaduan muka dan motif macan dengan cat warna terang, kayu albasia ringan aman untuk anak, buatan pengrajin Yogyakarta",
         features: [
             "Desain unik perpaduan motif",
             "Cat warna terang",
@@ -128,6 +134,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "5+ tahun",
         origin: "Solo",
+        altText: "Topeng setengah muka tradisional Jawa ringan dan nyaman, kayu albasia dengan cat natural, buatan pengrajin Solo",
         features: [
             "Desain setengah muka",
             "Lebih nyaman dipakai",
@@ -147,6 +154,7 @@ const products = [
         material: "Kayu Jati",
         ageRange: "7+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng karakter Petruk tokoh Punakawan wayang Jawa dengan ukiran presisi, kayu jati berkualitas, buatan pengrajin Yogyakarta",
         features: [
             "Karakter Punakawan ikonik",
             "Kayu jati berkualitas",
@@ -166,6 +174,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "4+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng edukatif bermotif zebra warna hitam putih kontras, kayu albasia aman untuk balita, buatan pengrajin Yogyakarta",
         features: [
             "Motif zebra menarik",
             "Warna kontras cerah",
@@ -185,6 +194,7 @@ const products = [
         material: "Kayu Albasia",
         ageRange: "4+ tahun",
         origin: "Yogyakarta",
+        altText: "Topeng zebra premium dengan detail halus dan finishing glossy, kayu albasia dengan cat anti-luntur, buatan pengrajin Yogyakarta",
         features: [
             "Detail lebih halus",
             "Cat premium anti-luntur",
@@ -204,6 +214,7 @@ const products = [
         material: "-",
         ageRange: "-",
         origin: "Yogyakarta",
+        altText: "Foto tampak luar Toko Mainan Tradisional Bu Suharti di Alun-Alun Utara Yogyakarta",
         features: [
             "Koleksi lengkap tersedia di toko",
             "Lokasi strategis Alun-Alun Utara",
