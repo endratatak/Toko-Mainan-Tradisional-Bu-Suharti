@@ -43,4 +43,4 @@ package-lock.json
 # buat file .gitignore
 echo ".DS_Store
 Thumbs.db
-.vscode/settings.json" > .gitignore
+.vscode/settings.json" > .gitignore.claude/
