@@ -418,6 +418,7 @@ function loadComponents() {
             console.error('Gagal memuat komponen:', err);
             const nb = document.getElementById('navbar-placeholder');
             if (nb) nb.innerHTML = '<nav class="navbar bg-light shadow-sm"><div class="container"><a class="navbar-brand fw-bold text-primary" href="index.html"><i class="fas fa-store"></i> Toko Bu Suharti</a></div></nav>';
+            updateCartBadge();
         });
 }
 
