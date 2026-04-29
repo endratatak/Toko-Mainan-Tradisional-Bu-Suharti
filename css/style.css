@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5 {
 
 .navbar-brand {
     font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem); /* responsive fix */
     color: var(--primary) !important;
     font-weight: 700;
     white-space: nowrap;
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5 {
 
 .hero-stats {
     display: flex;
-    gap: 40px;
+    gap: clamp(16px, 4vw, 40px); /* responsive fix */
     justify-content: center;
     margin-top: 36px;
     flex-wrap: wrap;
@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5 {
 
 .hero-stat .num {
     display: block;
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 6vw, 2rem); /* responsive fix */
     font-weight: 700;
     color: var(--accent-light);
     font-family: 'Playfair Display', serif;
@@ -313,6 +313,12 @@ h1, h2, h3, h4, h5 {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+}
+
+#productGrid img {
+    aspect-ratio: 4/3; /* responsive fix */
+    object-fit: cover; /* responsive fix */
+    width: 100%; /* responsive fix */
 }
 
 .product-card:hover .product-image { transform: scale(1.08); }
@@ -721,6 +727,12 @@ footer h5, footer h6 { color: var(--accent-light) !important; }
     .scroll-top-btn { bottom: 80px; right: 20px; }
 
     .product-detail-image { height: 260px; }
+}
+
+/* ── Responsive 480px ───────────────────────────── */
+@media (max-width: 480px) {
+    .hero-stats { flex-direction: column; gap: 16px; } /* responsive fix */
+    .hero-section { padding: 60px 0 50px; } /* responsive fix */
 }
 
 /* ── Responsive Tablet ───────────────────────────── */
