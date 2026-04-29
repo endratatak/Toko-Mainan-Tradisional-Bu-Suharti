@@ -6,9 +6,25 @@ const catalogProducts = products.filter(p => p.price > 0);
 let filteredProducts = [...catalogProducts];
 
 document.addEventListener('DOMContentLoaded', function() {
+    showSkeletons();
     displayProducts(catalogProducts);
     setupEventListeners();
 });
+
+function showSkeletons(n = 8) {
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = Array(n).fill(`
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="skeleton-card">
+                <div class="skeleton-img"></div>
+                <div class="skeleton-body">
+                    <div class="skeleton-line"></div>
+                    <div class="skeleton-line short"></div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
 
 function displayProducts(productList) {
     const productGrid  = document.getElementById('productGrid');
